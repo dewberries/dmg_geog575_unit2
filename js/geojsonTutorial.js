@@ -76,7 +76,7 @@ var geojsonMarkerOptions = {
 };
 
 // Circle marker for the point feature.
-L.geoJSON(someGeojsonFeature, {
+L.geoJSON(geojsonFeature, {
     pointToLayer: function (feature, latlng) {
         return L.circleMarker(latlng, geojsonMarkerOptions);
     }
