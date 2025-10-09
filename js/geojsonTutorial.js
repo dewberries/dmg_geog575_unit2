@@ -1,19 +1,11 @@
-// Create a map centered at a specific location.
-var geojsonFeature = {
-    "type": "Feature",
-    "properties": {
-        "name": "Coors Field",
-        "amenity": "Baseball Stadium",
-        "popupContent": "This is where the Rockies play!"
-    },
-    "geometry": {
-        "type": "Point",
-        "coordinates": [-104.99404, 39.75621]
-    }
-};
 
-// Initialize the map.
-L.geoJSON(geojsonFeature).addTo(map);
+
+// Initialize the map and add a base tile layer so subsequent GeoJSON layers can be added to it.
+var map = L.map('map').setView([39.75621, -104.99404], 5);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; OpenStreetMap contributors'
+}).addTo(map);
 
 // Define an array of GeoJSON LineString features.
 var myLines = [{
