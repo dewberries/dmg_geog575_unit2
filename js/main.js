@@ -5,8 +5,9 @@ var map;
 function createMap(){
     //create the map
     map = L.map('map', {
-        center: [40.0, -89.0],
-        zoom: 6
+        center: [38, -97],
+        zoom: 5
+    
     });
 
     //add tile layer...replace project id and accessToken with your own
@@ -35,7 +36,7 @@ function onEachFeature(feature, layer) {
 
 function getData(){
     //load the data
-    fetch("data/Illinois_Sinkhole_Points.geojson")
+    fetch("data/natparks.geojson")
         .then(function(response){
             return response.json();
         })
@@ -43,7 +44,7 @@ function getData(){
             //create marker options
             var geojsonMarkerOptions = {
                 radius: 5,
-                fillColor: "#f8c20fff",
+                fillColor: "#fdda65ff",
                 color: "#000",
                 weight: 1,
                 opacity: 1,
